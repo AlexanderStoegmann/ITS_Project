@@ -12,10 +12,16 @@ namespace Security_Application
 {
     public partial class Main : Form
     {
+
+        string path = @"..\..\..\Working_Folder\00_Documents\NochNichtErstellt.txt";
         public Main()
         {
             InitializeComponent();
+
+
         }
+
+        
 
 
     }
