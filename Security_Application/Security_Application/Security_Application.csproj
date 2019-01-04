@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="02_Decrypt\Class1.cs" />
+    <Compile Include="01_Encrypt\Class1.cs" />
+    <Compile Include="00_Documents\Class1.cs" />
     <Compile Include="03_Keys\Class1.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
