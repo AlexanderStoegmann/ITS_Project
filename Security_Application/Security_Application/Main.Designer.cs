@@ -30,12 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnCreateAsymmetric = new System.Windows.Forms.Button();
+            this.btnExportPublicRSAKey = new System.Windows.Forms.Button();
+            this.btnEncryptOneFile = new System.Windows.Forms.Button();
+            this.btnDecryptOneFile = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -56,71 +58,83 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "File Handling";
             // 
-            // button1
+            // btnCreateAsymmetric
             // 
-            this.button1.Location = new System.Drawing.Point(18, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Create Asymmetric RSA-Keys";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreateAsymmetric.Location = new System.Drawing.Point(18, 42);
+            this.btnCreateAsymmetric.Name = "btnCreateAsymmetric";
+            this.btnCreateAsymmetric.Size = new System.Drawing.Size(160, 30);
+            this.btnCreateAsymmetric.TabIndex = 2;
+            this.btnCreateAsymmetric.Text = "Create Asymmetric RSA-Keys";
+            this.btnCreateAsymmetric.UseVisualStyleBackColor = true;
+            this.btnCreateAsymmetric.Click += new System.EventHandler(this.btnCreateAsymmetric_Click);
             // 
-            // button2
+            // btnExportPublicRSAKey
             // 
-            this.button2.Location = new System.Drawing.Point(225, 42);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Export public RSA-Key";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnExportPublicRSAKey.Location = new System.Drawing.Point(225, 42);
+            this.btnExportPublicRSAKey.Name = "btnExportPublicRSAKey";
+            this.btnExportPublicRSAKey.Size = new System.Drawing.Size(160, 30);
+            this.btnExportPublicRSAKey.TabIndex = 3;
+            this.btnExportPublicRSAKey.Text = "Export public RSA-Key";
+            this.btnExportPublicRSAKey.UseVisualStyleBackColor = true;
+            this.btnExportPublicRSAKey.Click += new System.EventHandler(this.btnExportPublicRSAKey_Click);
             // 
-            // button3
+            // btnEncryptOneFile
             // 
-            this.button3.Location = new System.Drawing.Point(18, 127);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 30);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Encrypt One File";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEncryptOneFile.Location = new System.Drawing.Point(18, 127);
+            this.btnEncryptOneFile.Name = "btnEncryptOneFile";
+            this.btnEncryptOneFile.Size = new System.Drawing.Size(160, 30);
+            this.btnEncryptOneFile.TabIndex = 4;
+            this.btnEncryptOneFile.Text = "Encrypt One File";
+            this.btnEncryptOneFile.UseVisualStyleBackColor = true;
+            this.btnEncryptOneFile.Click += new System.EventHandler(this.btnEncryptOneFile_Click);
             // 
-            // button4
+            // btnDecryptOneFile
             // 
-            this.button4.Location = new System.Drawing.Point(225, 126);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 31);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Decrypt One File";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDecryptOneFile.Location = new System.Drawing.Point(225, 126);
+            this.btnDecryptOneFile.Name = "btnDecryptOneFile";
+            this.btnDecryptOneFile.Size = new System.Drawing.Size(160, 31);
+            this.btnDecryptOneFile.TabIndex = 5;
+            this.btnDecryptOneFile.Text = "Decrypt One File";
+            this.btnDecryptOneFile.UseVisualStyleBackColor = true;
+            this.btnDecryptOneFile.Click += new System.EventHandler(this.btnDecryptOneFile_Click);
             // 
-            // button5
+            // btnClear
             // 
-            this.button5.Location = new System.Drawing.Point(18, 191);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(160, 30);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(18, 191);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(160, 30);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnExit
             // 
-            this.button6.Location = new System.Drawing.Point(225, 191);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(160, 30);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Exit";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(225, 191);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(160, 30);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 239);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnDecryptOneFile);
+            this.Controls.Add(this.btnEncryptOneFile);
+            this.Controls.Add(this.btnExportPublicRSAKey);
+            this.Controls.Add(this.btnCreateAsymmetric);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -136,12 +150,14 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCreateAsymmetric;
+        private System.Windows.Forms.Button btnExportPublicRSAKey;
+        private System.Windows.Forms.Button btnEncryptOneFile;
+        private System.Windows.Forms.Button btnDecryptOneFile;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
 
