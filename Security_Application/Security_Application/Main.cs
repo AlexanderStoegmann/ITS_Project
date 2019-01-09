@@ -101,7 +101,8 @@ namespace Security_Application
         {
             //Generates and stores a key pair in the key container
             csp.KeyContainerName = ContainerName;
-            using (rsa = new RSACryptoServiceProvider(csp)) { rsa.PersistKeyInCsp = true; } 
+            rsa = new RSACryptoServiceProvider(csp);
+            rsa.PersistKeyInCsp = true;
         }
 
         private static void RijndaelEncrypt(string fileName)
